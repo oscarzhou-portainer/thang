@@ -4,9 +4,9 @@ FROM rust:slim-bullseye as builder
 WORKDIR /revolt
 
 COPY revolt/Cargo.toml Cargo.lock ./
-COPY ./revolt/src ./src
-COPY ./models /models
-COPY ./revolt-wrapper /revolt-wrapper
+COPY revolt/src ./src
+COPY models /models
+COPY revolt-wrapper /revolt-wrapper
 
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/revolt/target \

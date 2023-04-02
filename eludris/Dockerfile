@@ -4,8 +4,8 @@ FROM rust:slim-bullseye as builder
 WORKDIR /eludris
 
 COPY eludris/Cargo.toml Cargo.lock ./
-COPY ./eludris/src ./src
-COPY ./models /models
+COPY eludris/src ./src
+COPY models /models
 
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/eludris/target \

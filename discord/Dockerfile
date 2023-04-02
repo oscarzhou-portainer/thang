@@ -4,8 +4,8 @@ FROM rust:slim-bullseye as builder
 WORKDIR /discord
 
 COPY discord/Cargo.toml Cargo.lock ./
-COPY ./discord/src ./src
-COPY ./models /models
+COPY discord/src ./src
+COPY models /models
 
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/discord/target \
